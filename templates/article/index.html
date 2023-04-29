@@ -1,0 +1,17 @@
+{% extends "article/layout.html" %} {% block body %}
+<div class="jumbotron text-center">
+  <h3>Yazılım Bilimi Bloğuna Hoşgeldiniz</h3>
+  <p>
+    Yazılım Bilimi Bloğu, yazılım geliştirme ile ilgili yazılar yazmaya ve
+    yazılarınızı paylaşmaya yarayan bir blog sitesidir.
+  </p>
+</div>
+
+<p>
+  {% if request.user.is_authenticated %} <!-- kullanıcı session açmış mı -->
+      Giriş Yapılmış, {{request.user.username}}
+  {% else %}
+      Çıkış Yapılmış, {{request.user.username}}
+  {% endif %}
+</p>
+{% endblock body %}
